@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+         }
+         /* Mobile */
+         @media screen and (max-width: 767px) {
+            /* Navigation Bar */
+            nav {
+            width: 50vw;
+            height: 60px;
+            background: black;
+            position: fixed;
+            margin-left: 25vw;
+            z-index: 5;
+            border-end-end-radius: 20px;
+            border-end-start-radius: 20px;
+            border: 2px solid yellow;
+            border-top: 0px solid yellow;
+            transition: 1s;
+            }
+            #nimage {
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                border-radius: 90px;
+                border: 2px solid yellow;
+                margin-left: calc(25vw - 75px);
+                margin-top: 5vw;
+                display: none;
+            }
+            #ntitle {
+            font-size: 30px;
+            width: 185px;
+            color: yellow;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: calc(25vw - 92.5px);
+            }
+            #nemail {
+            font-size: 20px;
+            width:200px;
+            color: yellow;
+            position: absolute;
+            margin-top: 12.5px;
+            margin-left: calc(25vw - 100px);
+            display: none;
+            }
+            nav:hover {
+                height: 300px;
+            }
+            nav:hover #ntitle {
+                margin-top: 200px;
+            }
+            nav:hover #nimage {
+                display: block;
+            }
+            nav:hover #nemail {
+                display: block;
+                margin-top: 240px;
+            }
+            /* Header */
+            header {
+                width: 100%;    
+                background: black;  
+            }
+            #background {
+                width: 100%;
+                height: 100%;
+            }
+            #htitle {
+                font-size: 60px;
+                color: yellow;
+                width: 370px;
+                margin-left: calc(50vw - 185px);
+                margin-right: auto;
+                padding-top: calc(25vw - 30px);
+                position: absolute;
+            }
+            /* About Me / Degree / Benefits */
+            #about-me, #degree, #benefits {
+                width: 100%;
+                height: 150vw;
+                background: black;
+            }
+            #left {
+                width: 100%;
+                height: 50%;
+                position: absolute;
+            }
+            #right {
+                width: 100%;
+                height: 50%;
+                position: absolute;
+            }
+            #stitle1 {
+                color: yellow;
+                width: 90vw;
+                font-size: 30px;
+                margin-left: 5vw;
+                margin-top: 60vw;
+            }
+            #underline1 {
+                width: 1vw;
+                height: 5px;
+                background: yellow;
+                margin-left: 5vw;
+                animation: animate1 10s linear infinite;
+            }
+            #stext1 {
+                font-size: 20px;
+                color: white;
+                width: 85%;
+                margin-left: 5vw;
+                margin-top: 2.5vw;
+                width: 90vw;
+            }
+            #img-container1 {
+                width: 90vw;
+                height: 50vw;
+                margin-left: 5vw;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            #stitle2 {
+                color: yellow;
+                width: 90vw;
+                font-size: 30px;
+                margin-left: 5vw;
+                margin-top: 60vw;
+            }
+            #underline2 {
+                width: 1vw;
+                height: 5px;
+                background: yellow;
+                margin-left: 5vw;
+                animation: animate1 10s linear infinite;
+            }
+            #stext2 {
+                color: white;
+                width: 90vw;
+                margin-left: 5vw;
+                margin-top: 2.5vw;
+                font-size: 20px;
+            }
+            #img-container2 {
+                width: 90vw;
+                height: 50vw;
+                margin-left: 5vw;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            #simage {
+                width: 90vw;
+                height: 50vw;
+                border-radius: 20px;
+                transition: 1s ease;
+            }
+            #img-container1:hover #simage{
+                transform: scale(1.2);
+            }
+            #img-container2:hover #simage{
+                transform: scale(1.2);
+            }
+            @keyframes animate1 {
+                0% {
+                    width: 1vw;
+                }
+                50% {
+                    width: 90vw;
+                }
+                100% {
+                    width: 1vw;
+                }
+            }
+            /* CV */
+            #cv {
+                width: 100%;
+                height: 250px;
+                background: url('sunset.jpeg') center/cover no-repeat;
+            }
+            #tcv {
+                font-size: 40px;
+                color: black;
+                width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+            }
+            #download {
+                width: 240px;
+                height: 50px;
+                color: black;
+                background: yellow;
+                position: absolute;
+                font-size: 30px;
+                margin-left: calc(50vw - 120px);
+                margin-top: 20px;
+                border: 2px solid black;
+                border-radius: 20px;
+                transition: 1s;
+            }
+            #download:hover {
+                color: yellow;
+                background: black;
+                border: 2px solid yellow;
+            }
+            /* Projects */
+            #projects {
+                width: 100%;
+                height: 75vw;
+                background: black;
+                overflow: hidden;
+            }
+            #ptitle {
+                font-size: 60px;
+                width: 190px;
+                color: yellow;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+            }
+            #pimage1 {  
+                width: 30vw;
+                height: 20vw;
+                position: absolute;
+                margin-left: 10vw;
+                margin-top: 7.5vw;
+                z-index: 0;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('about-me.webp') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+            }
+            #pimage2 {
+                width: 40vw;
+                height: 25vw;
+                position: absolute;
+                margin-left: 30vw;
+                margin-top: 5vw;
+                z-index: 1;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('benefits.jpeg') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+
+            }
+            #pimage3 {
+                width: 30vw;
+                height: 20vw;
+                position: absolute;
+                margin-left: 60vw;
+                margin-top: 7.5vw;
+                z-index: 0;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('degree.webp') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+            }
+            #pleft1 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                margin-top: 15vw;
+                margin-left: 92.5vw;
+                border: 1px solid black;
+                background: black;
+            }
+            #pleft2, #pleft3, #pleft4 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                margin-top: 15vw;
+                margin-left: 92.5vw;
+                border: 1px solid black;
+                background: black;
+                display: none;
+            }
+            #pright1 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                border: 1px solid black;
+                background: black;
+                margin-top: 15vw;
+                margin-left: 2.5vw;
+            }
+            #pright2, #pright3, #pright4 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                border: 1px solid black;
+                background: black;
+                margin-top: 15vw;
+                margin-left: 2.5vw;
+                display: none;
+            }
+            #picon1 {
+                width: 5vw;
+                height: 5vw;
+            }
+            #picon2 {
+                width: 5vw;
+                height: 5vw;
+            }
+            /* Contact Me */
+            #contact {
+                width: 100%;
+                height: 500px;
+                background: url('background2.webp') center/cover no-repeat;
+            }
+            #ctitle {
+                font-size: 40px;
+                width: 190px;
+                color: yellow;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+
+            }
+            #email {
+                width: 90%;
+                height: 50px;
+                font-size: 20px;
+                color: black;
+                background: transparent;
+                border: 2px solid yellow;
+                margin-left: 5%;
+                margin-top: 50px;
+                padding-left: 2.5%;
+                transition: 1s;
+            }
+            #email:hover {
+                background: black;
+                color: yellow;
+            }
+            #text {
+                width: 90%;
+                height: 200px;
+                font-size: 20px;
+                color: black;
+                background: transparent;
+                border: 2px solid yellow;
+                margin-left: 5%;
+                margin-top: 25px;
+                padding-left: 2.5%;
+                padding-top: 20px;
+                resize: none;
+                transition: 1s;
+            }
+            #text:hover {
+                background: black;
+                color: yellow;
+            }
+            #fbutton {
+                height: 40px;
+                width: 25%;
+                background: transparent;
+                color: yellow;
+                font-size: 20px;
+                border: 2px solid yellow;
+                margin-top: 20px;
+                margin-left: 70%;
+                transition: 1s;
+            }
+            #fbutton:hover {
+                background: black;
+            }
+            /* Footer */
+            footer {
+                width: 100%;
+                height: 50px;
+                background: black;
+                color: yellow;
+                text-align: center;
+                padding-top: auto;
+                font-size: 20px;
+                padding-top: 15px;
+            }
+
+         }
+         /* Tablet */
+         @media screen and (min-width: 768px) and (max-width: 1024px) {
+            /* Navigation Bar */
+            nav {
+            width: 50vw;
+            height: 60px;
+            background: black;
+            position: fixed;
+            margin-left: 25vw;
+            z-index: 5;
+            border-end-end-radius: 20px;
+            border-end-start-radius: 20px;
+            border: 2px solid yellow;
+            border-top: 0px solid yellow;
+            transition: 1s;
+            }
+            #nimage {
+                width: 20vw;
+                height: 20vw;
+                position: absolute;
+                border-radius: 90px;
+                border: 2px solid yellow;
+                margin-left: 15vw;
+                margin-top: 5vw;
+                display: none;
+            }
+            #ntitle {
+            font-size: 30px;
+            width: 185px;
+            color: yellow;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: calc(25vw - 92.5px);
+            }
+            #nemail {
+            font-size: 2vw;
+            width:20vw;
+            color: yellow;
+            position: absolute;
+            margin-top: 12.5px;
+            margin-left: 15vw;
+            display: none;
+            }
+            nav:hover {
+                height: 40vw;
+            }
+            nav:hover #ntitle {
+                margin-top: 27.5vw;
+            }
+            nav:hover #nimage {
+                display: block;
+            }
+            nav:hover #nemail {
+                display: block;
+                margin-top: 32vw;
+            }
+            /* Header */
+            header {
+                width: 100%;    
+                background: black;  
+            }
+            #background {
+                width: 100%;
+                height: 100%;
+            }
+            #htitle {
+                font-size: 6vw;
+                color: yellow;
+                width: 37vw;
+                margin-left: 31.5vw;
+                margin-right: auto;
+                padding-top: calc(25vw - 30px);
+                position: absolute;
+            }
+            /* About Me / Degree / Benefits */
+            #about-me, #degree, #benefits {
+                width: 100%;
+                height: 100vw;
+                background: black;
+            }
+            #left {
+                width: 100%;
+                height: 50%;
+                position: absolute;
+            }
+            #right {
+                width: 100%;
+                height: 50%;
+                position: absolute;
+            }
+            #stitle1 {
+                color: yellow;
+                width: 90vw;
+                font-size: 30px;
+                margin-left: 5vw;
+                margin-top: 60vw;
+            }
+            #underline1 {
+                width: 1vw;
+                height: 5px;
+                background: yellow;
+                margin-left: 5vw;
+                animation: animate1 10s linear infinite;
+            }
+            #stext1 {
+                font-size: 20px;
+                color: white;
+                width: 85%;
+                margin-left: 5vw;
+                margin-top: 2.5vw;
+                width: 90vw;
+            }
+            #img-container1 {
+                width: 90vw;
+                height: 50vw;
+                margin-left: 5vw;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            #stitle2 {
+                color: yellow;
+                width: 90vw;
+                font-size: 30px;
+                margin-left: 5vw;
+                margin-top: 60vw;
+            }
+            #underline2 {
+                width: 1vw;
+                height: 5px;
+                background: yellow;
+                margin-left: 5vw;
+                animation: animate1 10s linear infinite;
+            }
+            #stext2 {
+                color: white;
+                width: 90vw;
+                margin-left: 5vw;
+                margin-top: 2.5vw;
+                font-size: 20px;
+            }
+            #img-container2 {
+                width: 90vw;
+                height: 50vw;
+                margin-left: 5vw;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            #simage {
+                width: 90vw;
+                height: 50vw;
+                border-radius: 20px;
+                transition: 1s ease;
+            }
+            #img-container1:hover #simage{
+                transform: scale(1.2);
+            }
+            #img-container2:hover #simage{
+                transform: scale(1.2);
+            }
+            @keyframes animate1 {
+                0% {
+                    width: 1vw;
+                }
+                50% {
+                    width: 90vw;
+                }
+                100% {
+                    width: 1vw;
+                }
+            }
+            /* CV */
+            #cv {
+                width: 100%;
+                height: 250px;
+                background: url('sunset.jpeg') center/cover no-repeat;
+            }
+            #tcv {
+                font-size: 40px;
+                color: black;
+                width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+            }
+            #download {
+                width: 240px;
+                height: 50px;
+                color: black;
+                background: yellow;
+                position: absolute;
+                font-size: 30px;
+                margin-left: calc(50vw - 120px);
+                margin-top: 20px;
+                border: 2px solid black;
+                border-radius: 20px;
+                transition: 1s;
+            }
+            #download:hover {
+                color: yellow;
+                background: black;
+                border: 2px solid yellow;
+            }
+            /* Projects */
+            #projects {
+                width: 100%;
+                height: 50vw;
+                background: black;
+                overflow: hidden;
+            }
+            #ptitle {
+                font-size: 60px;
+                width: 190px;
+                color: yellow;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+            }
+            #pimage1 {  
+                width: 30vw;
+                height: 20vw;
+                position: absolute;
+                margin-left: 10vw;
+                margin-top: 7.5vw;
+                z-index: 0;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('about-me.webp') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+            }
+            #pimage2 {
+                width: 40vw;
+                height: 25vw;
+                position: absolute;
+                margin-left: 30vw;
+                margin-top: 5vw;
+                z-index: 1;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('benefits.jpeg') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+
+            }
+            #pimage3 {
+                width: 30vw;
+                height: 20vw;
+                position: absolute;
+                margin-left: 60vw;
+                margin-top: 7.5vw;
+                z-index: 0;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('degree.webp') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+            }
+            #pleft1 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                margin-top: 15vw;
+                margin-left: 92.5vw;
+                border: 1px solid black;
+                background: black;
+            }
+            #pleft2, #pleft3, #pleft4 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                margin-top: 15vw;
+                margin-left: 92.5vw;
+                border: 1px solid black;
+                background: black;
+                display: none;
+            }
+            #pright1 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                border: 1px solid black;
+                background: black;
+                margin-top: 15vw;
+                margin-left: 2.5vw;
+            }
+            #pright2, #pright3, #pright4 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                border: 1px solid black;
+                background: black;
+                margin-top: 15vw;
+                margin-left: 2.5vw;
+                display: none;
+            }
+            #picon1 {
+                width: 5vw;
+                height: 5vw;
+            }
+            #picon2 {
+                width: 5vw;
+                height: 5vw;
+            }
+            /* Contact Me */
+            #contact {
+                width: 100%;
+                height: 500px;
+                background: url('background2.webp') center/cover no-repeat;
+            }
+            #ctitle {
+                font-size: 40px;
+                width: 190px;
+                color: yellow;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+
+            }
+            #email {
+                width: 50%;
+                height: 50px;
+                font-size: 20px;
+                color: black;
+                background: transparent;
+                border: 2px solid yellow;
+                margin-left: 25%;
+                margin-top: 50px;
+                padding-left: 2.5%;
+                transition: 1s;
+            }
+            #email:hover {
+                background: black;
+                color: yellow;
+            }
+            #text {
+                width: 50%;
+                height: 200px;
+                font-size: 20px;
+                color: black;
+                background: transparent;
+                border: 2px solid yellow;
+                margin-left: 25%;
+                margin-top: 25px;
+                padding-left: 2.5%;
+                padding-top: 20px;
+                resize: none;
+                transition: 1s;
+            }
+            #text:hover {
+                background: black;
+                color: yellow;
+            }
+            #fbutton {
+                height: 40px;
+                width: 15%;
+                background: transparent;
+                color: yellow;
+                font-size: 20px;
+                border: 2px solid yellow;
+                margin-top: 20px;
+                margin-left: 60%;
+                transition: 1s;
+            }
+            #fbutton:hover {
+                background: black;
+            }
+            /* Footer */
+            footer {
+                width: 100%;
+                height: 50px;
+                background: black;
+                color: yellow;
+                text-align: center;
+                padding-top: auto;
+                font-size: 20px;
+                padding-top: 15px;
+            }
+         }
+         /* Computer */
+         @media only screen and (min-width: 1025px) {
+            /* Navigation Bar */
+            nav {
+            width: 50vw;
+            height: 60px;
+            background: black;
+            position: fixed;
+            margin-left: 25vw;
+            z-index: 5;
+            border-end-end-radius: 20px;
+            border-end-start-radius: 20px;
+            border: 2px solid yellow;
+            border-top: 0px solid yellow;
+            transition: 1s;
+            }
+            #nimage {
+                width: 20vw;
+                height: 20vw;
+                position: absolute;
+                border-radius: 90px;
+                border: 2px solid yellow;
+                margin-left: 15vw;
+                margin-top: 5vw;
+                display: none;
+            }
+            #ntitle {
+            font-size: 30px;
+            width: 185px;
+            color: yellow;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: calc(25vw - 92.5px);
+            }
+            #nemail {
+            font-size: 2vw;
+            width:20vw;
+            color: yellow;
+            position: absolute;
+            margin-top: 12.5px;
+            margin-left: 15vw;
+            display: none;
+            }
+            nav:hover {
+                height: 40vw;
+            }
+            nav:hover #ntitle {
+                margin-top: 27.5vw;
+            }
+            nav:hover #nimage {
+                display: block;
+            }
+            nav:hover #nemail {
+                display: block;
+                margin-top: 32vw;
+            }
+            /* Header */
+            header {
+                width: 100%;    
+                background: black;  
+            }
+            #background {
+                width: 100%;
+                height: 100%;
+            }
+            #htitle {
+                font-size: 6vw;
+                color: yellow;
+                width: 37vw;
+                margin-left: 31.5vw;
+                margin-right: auto;
+                padding-top: calc(25vw - 30px);
+                position: absolute;
+            }
+            /* About Me / Degree / Benefits */
+            #about-me, #degree, #benefits {
+                width: 100%;
+                height: 500px;
+                background: black;
+            }
+            #left {
+                width: 50%;
+                height: 100%;
+                position: absolute;
+            }
+            #right {
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                margin-left: 50%;
+            }
+            #stitle1 {
+                color: yellow;
+                width: 50vw;
+                font-size: 30px;
+                margin-left: 10vw;
+                margin-top: 100px;
+            }
+            #underline1 {
+                width: 1vw;
+                height: 5px;
+                background: yellow;
+                margin-left: 10vw;
+                animation: animate1 10s linear infinite;
+            }
+            #stext1 {
+                font-size: 20px;
+                color: white;
+                width: 85%;
+                margin-left: 10vw;
+                margin-top: 2.5vw;
+                width: 40vw;
+            }
+            #img-container1 {
+                width: 40vw;
+                height: 25vw;
+                margin-top: 100px;
+                margin-left: 5vw;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            #stitle2 {
+                color: yellow;
+                width: 50vw;
+                font-size: 30px;
+                margin-left: 5vw;
+                margin-top: 100px;
+            }
+            #underline2 {
+                width: 1vw;
+                height: 5px;
+                background: yellow;
+                margin-left: 5vw;
+                animation: animate1 10s linear infinite;
+            }
+            #stext2 {
+                color: white;
+                width: 85%;
+                margin-left: 5vw;
+                margin-top: 2.5vw;
+                width: 40vw;
+                font-size: 20px;
+            }
+            #img-container2 {
+                width: 40vw;
+                height: 25vw;
+                margin-top: 100px;
+                margin-left: 10vw;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            #simage {
+                width: 40vw;
+                height: 25vw;
+                border-radius: 20px;
+                transition: 1s ease;
+            }
+            #img-container1:hover #simage{
+                transform: scale(1.2);
+            }
+            #img-container2:hover #simage{
+                transform: scale(1.2);
+            }
+            @keyframes animate1 {
+                0% {
+                    width: 1vw;
+                }
+                50% {
+                    width: 40vw;
+                }
+                100% {
+                    width: 1vw;
+                }
+            }
+            /* CV */
+            #cv {
+                width: 100%;
+                height: 250px;
+                background: url('sunset.jpeg') center/cover no-repeat;
+            }
+            #tcv {
+                font-size: 40px;
+                color: black;
+                width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+            }
+            #download {
+                width: 240px;
+                height: 50px;
+                color: black;
+                background: yellow;
+                position: absolute;
+                font-size: 30px;
+                margin-left: calc(50vw - 120px);
+                margin-top: 20px;
+                border: 2px solid black;
+                border-radius: 20px;
+                transition: 1s;
+            }
+            #download:hover {
+                color: yellow;
+                background: black;
+                border: 2px solid yellow;
+            }
+            /* Projects */
+            #projects {
+                width: 100%;
+                height: 50vw;
+                background: black;
+                overflow: hidden;
+            }
+            #ptitle {
+                font-size: 80px;
+                width: 260px;
+                color: yellow;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+            }
+            #pimage1 {  
+                width: 30vw;
+                height: 20vw;
+                position: absolute;
+                margin-left: 10vw;
+                margin-top: 7.5vw;
+                z-index: 0;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('about-me.webp') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+            }
+            #pimage2 {
+                width: 40vw;
+                height: 25vw;
+                position: absolute;
+                margin-left: 30vw;
+                margin-top: 5vw;
+                z-index: 1;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('benefits.jpeg') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+
+            }
+            #pimage3 {
+                width: 30vw;
+                height: 20vw;
+                position: absolute;
+                margin-left: 60vw;
+                margin-top: 7.5vw;
+                z-index: 0;
+                border: 2px solid yellow;
+                border-radius: 20px;
+                background: url('degree.webp') center/cover no-repeat;
+                transition: background-image 1s ease-in-out;
+            }
+            #pleft1 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                margin-top: 15vw;
+                margin-left: 92.5vw;
+                border: 1px solid black;
+                background: black;
+            }
+            #pleft2, #pleft3, #pleft4 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                margin-top: 15vw;
+                margin-left: 92.5vw;
+                border: 1px solid black;
+                background: black;
+                display: none;
+            }
+            #pright1 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                border: 1px solid black;
+                background: black;
+                margin-top: 15vw;
+                margin-left: 2.5vw;
+            }
+            #pright2, #pright3, #pright4 {
+                width: 5vw;
+                height: 5vw;
+                position: absolute;
+                border: 1px solid black;
+                background: black;
+                margin-top: 15vw;
+                margin-left: 2.5vw;
+                display: none;
+            }
+            #picon1 {
+                width: 5vw;
+                height: 5vw;
+            }
+            #picon2 {
+                width: 5vw;
+                height: 5vw;
+            }
+            /* Contact Me */
+            #contact {
+                width: 100%;
+                height: 500px;
+                background: url('background2.webp') center/cover no-repeat;
+            }
+            #ctitle {
+                font-size: 40px;
+                width: 190px;
+                color: yellow;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 50px;
+
+            }
+            #email {
+                width: 50%;
+                height: 50px;
+                font-size: 20px;
+                color: black;
+                background: transparent;
+                border: 2px solid yellow;
+                margin-left: 25%;
+                margin-top: 50px;
+                padding-left: 2.5%;
+                transition: 1s;
+            }
+            #email:hover {
+                background: black;
+                color: yellow;
+            }
+            #text {
+                width: 50%;
+                height: 200px;
+                font-size: 20px;
+                color: black;
+                background: transparent;
+                border: 2px solid yellow;
+                margin-left: 25%;
+                margin-top: 25px;
+                padding-left: 2.5%;
+                padding-top: 20px;
+                resize: none;
+                transition: 1s;
+            }
+            #text:hover {
+                background: black;
+                color: yellow;
+            }
+            #fbutton {
+                height: 40px;
+                width: 15%;
+                background: transparent;
+                color: yellow;
+                font-size: 20px;
+                border: 2px solid yellow;
+                margin-top: 20px;
+                margin-left: 60%;
+                transition: 1s;
+            }
+            #fbutton:hover {
+                background: black;
+            }
+            /* Footer */
+            footer {
+                width: 100%;
+                height: 50px;
+                background: black;
+                color: yellow;
+                text-align: center;
+                padding-top: auto;
+                font-size: 20px;
+                padding-top: 15px;
+            }
+         }    
+        </style>
+    </head>
+    <nav>
+        <img src="assem.jpeg" id="nimage">
+        <div id="ntitle">Assem Shamas</div>
+        <div id="nemail">ashamas851@gmail.com</div>
+    </nav>
+    <header>
+        <div id="htitle">Assem Shamas</div>
+        <video autoplay muted loop id="background">
+            <source src="background.mp4" type="video/mp4">
+        </video>   
+    </header>
+    <section id="about-me">
+        <div id="left">
+            <div id="stitle1">About Me</div>
+            <div id="underline1"></div>
+            <div id="stext1">Assem Shamas, a versatile professional, holds a Bachelor's degree in Accounting and Auditing, showcasing a strong foundation in financial principles. Beyond the realm of numbers, Assem brings a wealth of experience in the dynamic field of web design and development. Combining analytical skills honed through accounting studies with a creative flair for web solutions, Assem has successfully navigated the intersections of finance and technology. With a commitment to excellence, Assem is poised to contribute uniquely to diverse projects, leveraging a rich skill set that spans both financial expertise and innovative web development proficiency.</div>
+        </div>
+        <div id="right">
+            <div id="img-container1">
+                <img src="about-me.webp" id="simage">
+            </div>
+            </div>
+        </div>
+    </section>
+    <section id="degree">
+        <div id="left">
+            <div id="img-container2">
+                <img src="degree.webp" id="simage">
+            </div>
+        </div>
+        <div id="right">
+            <div id="stitle2">Degree</div>
+            <div id="underline2"></div>
+            <div id="stext2">I proudly hold a Bachelor's degree in Accounting and Auditing from the esteemed Lebanese University. This comprehensive program equipped me with a profound understanding of financial principles, audit methodologies, and the intricate workings of accounting systems. The academic journey not only instilled in me a solid foundation in the principles of accounting but also cultivated a disciplined and analytical approach towards financial practices. My degree from the Lebanese University reflects my commitment to academic excellence and lays the groundwork for a successful and impactful career in the dynamic field of accounting and auditing.</div>
+        </div>
+    </section>
+    <section id="benefits">
+        <div id="left">
+            <div id="stitle1">Benefits</div>
+            <div id="underline1"></div>
+            <div id="stext1">Collaborating with me offers a multifaceted advantage in the realm of web development. With a comprehensive skill set, I not only possess the expertise to design and build visually appealing websites but also the technical prowess to seamlessly integrate them with databases. My proficiency extends across diverse web genres, including personal websites, engaging blogs, and robust e-commerce platforms.</div>
+        </div>
+        <div id="right">
+            <div id="img-container1">
+                <img src="benefits.jpeg" id="simage">
+            </div>
+        </div>
+    </section>
+    <section id="cv">
+        <div id="tcv">Check My CV</div>
+        <button id="download">Download</button>
+    </section>
+    <section id="projects">
+        <div id="ptitle">Projects</div>
+        <div id="pcontainer">
+            <div id="pimage1"></div>
+            <img id="pimage2"></div>
+            <img id="pimage3"></div>
+        </div>
+        <button id="pleft1" onclick="left1()"><img src="left.png" id="picon2"></button>
+        <button id="pleft2" onclick="left2()"><img src="left.png" id="picon2"></button>
+        <button id="pleft3" onclick="left3()"><img src="left.png" id="picon2"></button>
+        <button id="pleft4" onclick="left4()"><img src="left.png" id="picon2"></button>
+        <button id="pright1" onclick="right1()"><img src="right.png" id="picon1"></button>
+        <button id="pright2" onclick="right2()"><img src="right.png" id="picon1"></button>
+        <button id="pright3" onclick="right3()"><img src="right.png" id="picon1"></button>
+        <button id="pright4" onclick="right4()"><img src="right.png" id="picon1"></button>
+    </section>
+    <section id="contact">
+        <div id="ctitle">Contact Me</div>
+        <form onsubmit="sendEmail(); reset(); return false">
+        <input type="email" placeholder="example@gmail.com" id="email">
+        <textarea placeholder="Hello, my name is ..." id="text"></textarea><br>
+        <button id="fbutton">Send Email</button>
+        </form>
+    </section>
+    <footer>
+        <span id="ftxt">&copy; 2023 Assem Shamas. All rights reserved.</span>
+    </footer>
+    <script>
+        const image1 = 'about-me.webp';
+        const image2 = 'benefits.jpeg';
+        const image3 = 'degree.webp';
+        const image4 = 'sunset.jpeg';
+        function left1() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image2}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image3}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image4}')`;
+            document.getElementById("pleft1").style.display = 'none';
+            document.getElementById("pleft2").style.display = 'block';
+            document.getElementById("pright1").style.display = 'none';
+            document.getElementById("pright4").style.display = 'block';
+        }
+        function left2() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image3}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image4}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image1}')`;
+            document.getElementById("pleft2").style.display = 'none';
+            document.getElementById("pleft3").style.display = 'block';
+            document.getElementById("pright4").style.display = 'none';
+            document.getElementById("pright3").style.display = 'block';
+        }
+        function left3() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image4}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image1}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image2}')`;
+            document.getElementById("pleft3").style.display = 'none';
+            document.getElementById("pleft4").style.display = 'block';
+            document.getElementById("pright3").style.display = 'none';
+            document.getElementById("pright2").style.display = 'block';
+        }
+        function left4() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image1}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image2}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image3}')`;
+            document.getElementById("pleft4").style.display = 'none';
+            document.getElementById("pleft1").style.display = 'block';
+            document.getElementById("pright2").style.display = 'none';
+            document.getElementById("pright1").style.display = 'block';
+        }
+        function right1() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image4}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image1}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image2}')`;
+            document.getElementById("pright1").style.display = 'none';
+            document.getElementById("pright2").style.display = 'block';
+            document.getElementById("pleft1").style.display = 'none';
+            document.getElementById("pleft4").style.display = 'block';
+
+        }
+        function right2() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image3}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image4}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image1}')`;
+            document.getElementById("pright2").style.display = 'none';
+            document.getElementById("pright3").style.display = 'block';
+            document.getElementById("pleft4").style.display = 'none';
+            document.getElementById("pleft3").style.display = 'block';
+        }
+        function right3() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image2}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image3}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image4}')`;
+            document.getElementById("pright3").style.display = 'none';
+            document.getElementById("pright4").style.display = 'block';
+            document.getElementById("pleft3").style.display = 'none';
+            document.getElementById("pleft2").style.display = 'block';
+        }
+        function right4() {
+            document.getElementById("pimage1").style.backgroundImage = `url('${image1}')`;
+            document.getElementById("pimage2").style.backgroundImage = `url('${image2}')`;
+            document.getElementById("pimage3").style.backgroundImage = `url('${image3}')`;
+            document.getElementById("pright4").style.display = 'none';
+            document.getElementById("pright1").style.display = 'block';
+            document.getElementById("pleft2").style.display = 'none';
+            document.getElementById("pleft1").style.display = 'block';
+        }
+
+    </script>
+</html>

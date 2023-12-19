@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Image</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+            background: url('background2.webp') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="changeBackgroundImage()">Change Background Image</button>
+
+    <script>
+        function changeBackgroundImage() {
+            const newImageUrl = 'degree.webp';
+            document.body.style.backgroundImage = `url('${newImageUrl}')`;
+        }
+    </script>
+</body>
+</html>
+
